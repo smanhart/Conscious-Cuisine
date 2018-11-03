@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- olivia's api key (username olfo4481)
+d4e057f3a8ea5950a36888326ba019ee -->
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -22,69 +25,120 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-    <script src="javascript/logic.js"></script>
+  <script src="javascript/logic.js"></script>
   <br><br>
   <div class="main">
     <div class="jumbotron">
       <h1>Place Holder Project 1</h1>
       <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on
         the web.</p>
+      <div class="card">
+        <div class="card-body">
+          <p>Exclude Ingredient List</p>
+          <div class="container">
+            <div class="row">
+              <ul class="list-unstyled">
+                <li><label><input type="checkbox" class="all"> All</label></li>
+                <li>
+                  <hr>
+                </li>
+                <li><label><input type="checkbox" name="casual_dating"> Casual Dating</label></li>
+                <li><label><input type="checkbox" name="serious_commitment"> Serious Commitment</label></li>
+                <li><label><input type="checkbox" name="companionship"> Companionship</label></li>
+                <li><label><input type="checkbox" name="hookups"> Hookups</label></li>
+                <li><label><input type="checkbox" name="marriage"> Marriage</label></li>
+                <li><label><input type="checkbox" name="local_connections"> Local Connections</label></li>
+                <li><label><input type="checkbox" name="more_dates"> More Dates</label></li>
+                <li><label><input type="checkbox" name="fast_matches"> Fast Matches</label></li>
+                <li><label><input type="checkbox" name="online_interaction"> Online Interaction</label></li>
+                <li><label><input type="checkbox" name="high_compatiblity"> High Compatiblity</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <p>Include Ingredient List</p>
+          <div class="container">
+            <div class="row">
+              <ul class="list-unstyled">
+                <li><label><input type="checkbox" class="all"> All</label></li>
+                <li>
+                  <hr>
+                </li>
+                <li><label><input type="checkbox" name="casual_dating"> Casual Dating</label></li>
+                <li><label><input type="checkbox" name="serious_commitment"> Serious Commitment</label></li>
+                <li><label><input type="checkbox" name="companionship"> Companionship</label></li>
+                <li><label><input type="checkbox" name="hookups"> Hookups</label></li>
+                <li><label><input type="checkbox" name="marriage"> Marriage</label></li>
+                <li><label><input type="checkbox" name="local_connections"> Local Connections</label></li>
+                <li><label><input type="checkbox" name="more_dates"> More Dates</label></li>
+                <li><label><input type="checkbox" name="fast_matches"> Fast Matches</label></li>
+                <li><label><input type="checkbox" name="online_interaction"> Online Interaction</label></li>
+                <li><label><input type="checkbox" name="high_compatiblity"> High Compatiblity</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="container" id="quote">
-        <div class="card">
-            <div class="card-body">
-                <h1>Motivational Quote of the Day</h1>
-            </div>
-          </div>
+      <div class="card">
+        <div class="card-body">
+          <h1>Motivational Quote of the Day</h1>
+        </div>
+      </div>
     </div>
     <div class="row">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
-      
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <div class="container" id="shopping-list">
-      
+
       <div class="card mb-4">
-          <div class="card-header">Weekly Meals</div>
-          <div class="card-body">
-            <table class="table table-sm table-hover" id='meal-table'>
-              <thead>
-                <tr>
-                  <th scope="col">Monday</th>
-                  <th scope="col">Tuesday</th>
-                  <th scope="col">Wednesday</th>
-                  <th scope="col">Thursday</th>
-                  <th scope="col">Friday</th>
-                  <th scope="col">Saturday</th>
-                  <th scope="col">Sunday</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
+        <div class="card-header">Weekly Meals</div>
+        <div class="card-body">
+          <table class="table table-sm table-hover" id='meal-table'>
+            <thead>
+              <tr>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+                <th scope="col">Saturday</th>
+                <th scope="col">Sunday</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
 
-    </div>
+  </div>
   </div>
 </body>
 

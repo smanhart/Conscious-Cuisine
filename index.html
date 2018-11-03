@@ -18,34 +18,83 @@
       <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on
         the web.</p>
     </div>
-    <div class="container" id="quote">
-        <div class="card">
-            <div class="card-body">
-                <h1>Motivational Quote of the Day</h1>
-            </div>
-          </div>
-    </div>
+    
     <div class="row">
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline">
+                      <h3> Feeling hungry?</h3>
+                       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                  </nav>
+              <div id="accordion">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Courses
+                        </button>
+                      </h5>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                          <input type="checkbox" name="course1" value="appetizer"> Appetizer<br>
+                          <input type="checkbox" name="course2" value="main"> Main Course<br>
+                          <input type="checkbox" name="course3" value="dessert"> Dessert<br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Allergies
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                      <div class="card-body">
+                          <input type="checkbox" name="course1" value="allergies">Allergies<br>
+                          <input type="checkbox" name="allergy1" value="dairy"> Dairy<br>
+                          <input type="checkbox" name="allergy2" value="egg"> Egg<br>
+                          <input type="checkbox" name="allergy3" value="appetizer"> Gluten<br>
+                          <input type="checkbox" name="allergy4" value="peanut"> Peanut<br>
+                          <input type="checkbox" name="allergy5" value="treenut"> Tree Nut<br>
+                          <input type="checkbox" name="allergy1" value="seafood"> Seafood<br>
+                          <input type="checkbox" name="allergy1" value="sesame"> Sesame<br>
+                          <input type="checkbox" name="allergy1" value="soy"> Soy<br>
+                          <input type="checkbox" name="allergy1" value="wheat"> Wheat<br>
+                          <input type="checkbox" name="allergy1" value="sulfite"> Sulfite<br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              
+              <h5 class="card-title">Recipe</h5>
+              <p class="card-text">Content of recipe</p>
+              
             </div>
           </div>
         </div>
       </div>
 
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            Music of the day placeholder
+          </div>
+        </div>
+      
   <!-- Napster tester HTML -->
   <div class="container">
     <div class="header">
@@ -77,7 +126,8 @@
 
 
 
-    <div class="container" id="shopping-list">
+
+    <!-- <div class="container" id="shopping-list">
       
       <div class="card mb-4">
           <div class="card-header">Weekly Meals</div>
@@ -100,7 +150,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     </div>
   </div>

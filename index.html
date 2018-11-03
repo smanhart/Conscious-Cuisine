@@ -6,15 +6,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="assets/style.css">
+
   <title>Project 1</title>
 </head>
 
 <body>
- 
+
   <div class="main">
     <div class="jumbotron">
       <h1>Place Holder Project 1</h1>
@@ -48,7 +45,37 @@
           </div>
         </div>
       </div>
-      
+
+  <!-- Napster tester HTML -->
+  <div class="container">
+    <div class="header">
+      Top Playlists
+    </div>
+    <div class="back-button"><a>Back to playlists</a></div>
+    <div id="playlist-container"></div>
+    <div id="tracks-container"></div>
+  </div>
+  
+  <script id="playlist-template" type="text/x-handlebars-template">
+    {{#each playlists}}
+    <div style="background-image:url({{images.0.url}})" data-playlist-id="{{id}}" data-playlist-name="{{name}}" class="cover">
+    <div class="content-name">{{name}}</div></div>
+    {{/each}}
+  </script>
+  
+  <script id="tracks-template" type="text/x-handlebars-template">
+    {{#each tracks}}
+    <div data-track-id="{{id}}" style="background-image:url(http://direct.rhapsody.com/imageserver/v2/albums/{{albumId}}/images/300x300.jpg)" class="cover">
+    <div class=content-name>{{name}}</div>
+    <audio controls class= "audio">
+      <source src="{{previewURL}}" type="audio/mpeg">
+    </audio>
+    </div>
+    {{/each}}
+  </script>
+
+
+
 
     <div class="container" id="shopping-list">
       
@@ -78,10 +105,27 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="javascript/logic.js"></script>
+
+  
+    <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+
+
+    <script src="javascript/logic.js"></script>
+      <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+  crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/style.css">
+
 </body>
 
 </html>

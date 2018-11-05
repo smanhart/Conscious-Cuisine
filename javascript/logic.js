@@ -79,12 +79,16 @@ function addPlaylistListener() {
 
 
 
-
+// yummily recipe code
 function recipeSearch() {
-    var ingredient = "chicken"
+    var ingredient = $("#recipeSearch").val().trim();
 
-    // var queryURL = "https://api.yummly.com/v1_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient
-    var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
+    var ingrNoSpace = ingredient.replace(/ /g, "+")
+    console.log(ingrNoSpace)
+
+    //append allergy and course search parameters to end of url
+
+   // var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingrNoSpace + "&requirePictures=true"
     
     console.log(queryURL)
     
@@ -103,3 +107,11 @@ $("button").on("click", function(event) {
 
     recipeSearch();
 })
+
+$('#accordion').on('change', ':checkbox', function () {
+    if ($(this).is(':checked')) {
+        console.log($(this).val() + ' is now checked');
+    } else {
+        console.log($(this).val() + ' is now unchecked');
+    }
+});

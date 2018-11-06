@@ -112,35 +112,8 @@
           </div>
         </div>
       </div>
-     
-      
-  <!-- Napster tester HTML -->
-  <div class="container">
-    <div class="header">
-      Top Playlists
-    </div>
-    <div class="back-button"><a>Back to playlists</a></div>
-    <div id="playlist-container"></div>
-    <div id="tracks-container"></div>
-  </div>
-  
-  <script id="playlist-template" type="text/x-handlebars-template">
-    {{#each playlists}}
-    <div style="background-image:url({{images.0.url}})" data-playlist-id="{{id}}" data-playlist-name="{{name}}" class="cover">
-    <div class="content-name">{{name}}</div></div>
-    {{/each}}
-  </script>
-  
-  <script id="tracks-template" type="text/x-handlebars-template">
-    {{#each tracks}}
-    <div data-track-id="{{id}}" style="background-image:url(http://direct.rhapsody.com/imageserver/v2/albums/{{albumId}}/images/300x300.jpg)" class="cover">
-    <div class=content-name>{{name}}</div>
-    <audio controls class= "audio">
-      <source src="{{previewURL}}" type="audio/mpeg">
-    </audio>
-    </div>
-    {{/each}}
-  </script>
+
+
     <!-- <div class="container" id="shopping-list">
       
       <div class="card mb-4">

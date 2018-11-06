@@ -1,61 +1,9 @@
-/* Napster tester css*/
-.jumbotron{
-  width: 100%;
-  height: 25%;
-}
+.main {
+  background-color: black; }
+  .main-sidebar {
+    border: 1px solid; }
 
-.header {
-    font-size: 50px;
-    text-align: center;
-    
-  }
-  .track-cover {
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-  }
-  
-  .cover {
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    margin: 10px;
-    float: left;
-    border: 3px solid black; 
-    position: relative;
-  }
-  
-  .audio {
-      position: absolute;
-      bottom: 0;
-  }
-  .cover:hover {
-    cursor: pointer;
-  }
-  
-  .content-name{
-    color: white;
-    font-size: 25px;
-    text-align: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  }
-  
-  .back-button {
-        /* Remove all decorations to look like normal text */
-      background: none;
-      border: none;
-      display: inline;
-      font: inherit;
-      margin: 0;
-      padding: 0;
-      outline: none;
-      outline-offset: 0;
-      /* Additional styles to look like a link */
-      color: blue;
-      cursor: pointer;
-      text-decoration: underline;
-  }
+
+
 
 /*# sourceMappingURL=style.css.map */

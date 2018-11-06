@@ -1,2 +1,20 @@
 
 
+
+.main {
+  background-color: #be9b7b; }
+  .main-sidebar {
+    border: 1px solid; }
+
+.search {
+  margin-left: 20px; }
+
+.card-header {
+  background-color: #580000; }
+  .card-header .btn {
+    color: white; }
+
+.card-body {
+  color: brown; }
+
+/*# sourceMappingURL=style.css.map */

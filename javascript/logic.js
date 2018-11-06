@@ -36,37 +36,68 @@ $(document).ready(function(){
     console.log(response);
   })
 
-});
+
+// yummily recipe code
+
+
+var queryURL; 
+var ingredient;
+var ingrNoSpace;
+var params = [];
+var refinedQuery;
+
+    //append allergy and course search parameters to end of url
+    $('#accordion').on('change', ':checkbox', function () {
+        if ($(this).is(':checked')) {
+            // params.append("&allowedCourse[]", "course^course-" + $(this).val())
+                console.log($(this).val() + ' is now checked');
+                // console.log(params);
+    
+            params.push("&allowedCourse[]course^course-" + $(this).val());
+            console.log(params);
+            
+    
+        } else {
+    
+            params.splice(($(this).val()))
+            console.log(params);
+            
+        }
+        
+        
+    });
+ 
 
 
 
-//var ingredient = "chicken"
+function recipeSearch(ingredient) {
+    
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
+   
+   
+   
 
-// var queryURL = "https://api.yummly.com/v1_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient
-//var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient
+refinedQuery = queryURL + params;
+console.log(refinedQuery);
+    
+    // $.ajax({
+    //     url: refinedQuery,
+    //     method: "GET"
+    // }).then(function(response) {
+    
+    //     // var results = response.data
+    //     console.log(response)
+    // })
+}
 
-// console.log(queryURL)
 
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-// }).then(function(response) {
-=======
-// var ingredient = "chicken"
+$("button").on("click", function(event) {
+    event.preventDefault();
+    ingredient = $("#recipeSearch").val().trim();
+    ingrNoSpace = ingredient.replace(/ /g, "+");
+    recipeSearch(ingrNoSpace);
+})
 
-// var queryURL = "https://api.yummly.com/v1_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient
-//var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient
-
-// console.log(queryURL)
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-// }).then(function(response) {
-
-//     // var results = response.data
-//     console.log(response)
-//})
 
 
 //     // var results = response.data

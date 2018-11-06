@@ -1,9 +1,18 @@
 .main {
-    background-color: black;
+    background-color:#be9b7b ;
     &-sidebar { border: 1px solid; }
   }
   .search {
       margin-left: 20px;
   }
+  .card-header {
+    background-color: #580000;
+    .btn {
+        color: white;
+    }
+  }
+.card-body {
+    color: brown;
+}
 
   

@@ -16,90 +16,117 @@
 
 //   });
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
 
-const playlistTemplateSource = document.getElementById('playlist-template').innerHTML;
-const playlistTemplate = Handlebars.compile(playlistTemplateSource);
+// const playlistTemplateSource = document.getElementById('playlist-template').innerHTML;
+// const playlistTemplate = Handlebars.compile(playlistTemplateSource);
 
-const tracksTemplateSource = document.getElementById('tracks-template').innerHTML;
-const tracksTemplate = Handlebars.compile(tracksTemplateSource);
+// const tracksTemplateSource = document.getElementById('tracks-template').innerHTML;
+// const tracksTemplate = Handlebars.compile(tracksTemplateSource);
 
-const $playlist = $('#playlist-container');
-const $tracks = $('#tracks-container');
-const $mainTitle = $('.header');
-const $backButton = $('.back-button');
+// const $playlist = $('#playlist-container');
+// const $tracks = $('#tracks-container');
+// const $mainTitle = $('.header');
+// const $backButton = $('.back-button');
 
-const getTopPlaylists = $.get('https://api.napster.com/v2.0/playlists?apikey=' + APIKey);
+// const getTopPlaylists = $.get('https://api.napster.com/v2.0/playlists?apikey=' + APIKey);
 
-console.log(getTopPlaylists);
+// console.log(getTopPlaylists);
 
 
-function getPlaylistTracks(id) { //grabbing playlist id, from the click event of the image of playlist
-  return $.get('https://api.napster.com/v2.0/playlists/' + id + '/tracks?apikey=' + APIKey + '&limit=50');
-}
+// function getPlaylistTracks(id) { //grabbing playlist id, from the click event of the image of playlist
+//   return $.get('https://api.napster.com/v2.0/playlists/' + id + '/tracks?apikey=' + APIKey + '&limit=50');
+// }
 
-$backButton.click(() => {
-	$playlist.show();
-  $tracks.hide();
-  $mainTitle.text('Top Playlists');
-  $backButton.hide();
-});
+// $backButton.click(() => {
+// 	$playlist.show();
+//   $tracks.hide();
+//   $mainTitle.text('Top Playlists');
+//   $backButton.hide();
+// });
 
-$backButton.hide(); // Initially hide back button.
+// $backButton.hide(); // Initially hide back button.
 
-function changeToTracks(playlistName) {
-	$mainTitle.text(playlistName);
-  $playlist.hide();
-	$tracks.show();
-  $backButton.show();
+// function changeToTracks(playlistName) {
+// 	$mainTitle.text(playlistName);
+//   $playlist.hide();
+// 	$tracks.show();
+//   $backButton.show();
   
-  return renderTracks;
-}
+//   return renderTracks;
+// }
 
-function renderTracks(response) {
-  $tracks.html(tracksTemplate(response));
-}
+// function renderTracks(response) {
+//   $tracks.html(tracksTemplate(response));
+// }
 
-getTopPlaylists //get a list of the playlists
-  .then((response) => {
-    $playlist.html(playlistTemplate(response));
-    addPlaylistListener();
-  });
+// getTopPlaylists //get a list of the playlists
+//   .then((response) => {
+//     $playlist.html(playlistTemplate(response));
+//     addPlaylistListener();
+//   });
 
-function addPlaylistListener() {
-  $('.cover').on('click', (e) => {
-    const $playlist = $(e.target);
-    getPlaylistTracks($playlist.data('playlistId')) //picture id is tagged and will pull the tracks from the cover image clicked
-      .then(changeToTracks($playlist.data('playlistName')));
-  });
-}
+// function addPlaylistListener() {
+//   $('.cover').on('click', (e) => {
+//     const $playlist = $(e.target);
+//     getPlaylistTracks($playlist.data('playlistId')) //picture id is tagged and will pull the tracks from the cover image clicked
+//       .then(changeToTracks($playlist.data('playlistName')));
+//   });
+// }
 
-});
+// });
 
 
 
 // yummily recipe code
-function recipeSearch() {
-    var ingredient = $("#recipeSearch").val().trim();
 
+
+
+
+ 
+
+
+
+function recipeSearch() {
+    
+    var ingredient = $("#recipeSearch").val().trim();
     var ingrNoSpace = ingredient.replace(/ /g, "+")
-    console.log(ingrNoSpace)
+    var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingrNoSpace + "&requirePictures=true"
+    var params = [];
+    var refinedQuery = queryURL + params;
+
+    console.log(refinedQuery);
 
     //append allergy and course search parameters to end of url
+$('#accordion').on('change', ':checkbox', function () {
+    if ($(this).is(':checked')) {
+        // params.append("&allowedCourse[]", "course^course-" + $(this).val())
+            console.log($(this).val() + ' is now checked');
+            // console.log(params);
 
-   // var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingrNoSpace + "&requirePictures=true"
+        params.push("&allowedCourse[]course^course-" + $(this).val());
+        console.log(params);
+        
+
+    } else {
+
+        params.splice(($(this).val()))
+        console.log(params);
+        
+    }
     
-    console.log(queryURL)
+});
+
     
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function(response) {
+    // $.ajax({
+    //     url: refinedQuery,
+    //     method: "GET"
+    // }).then(function(response) {
     
-        // var results = response.data
-        console.log(response)
-    })
+    //     // var results = response.data
+    //     console.log(response)
+    // })
 }
 
 $("button").on("click", function(event) {
@@ -108,10 +135,3 @@ $("button").on("click", function(event) {
     recipeSearch();
 })
 
-$('#accordion').on('change', ':checkbox', function () {
-    if ($(this).is(':checked')) {
-        console.log($(this).val() + ' is now checked');
-    } else {
-        console.log($(this).val() + ' is now unchecked');
-    }
-});

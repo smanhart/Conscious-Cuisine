@@ -89,39 +89,46 @@
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            Music of the day placeholder
-          </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" id="CORSRequest">View Nutrition Data</button>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Nutrition Data</h3>
+                </div>
+                <div class="panel-body" id="wellSection">
+                </div> 
+
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <br>
+                              <hr> Response:
+                              <br>
+                              <pre id="response">
+                              </pre>
+
+                          </button>
+                        </h5>
+                      </div>
+                    </div>
+                </div>
+            </div>
         </div>
+      </div>
       
-  <!-- Napster tester HTML -->
-  <div class="container">
-    <div class="header">
-      Top Playlists
-    </div>
-    <div class="back-button"><a>Back to playlists</a></div>
-    <div id="playlist-container"></div>
-    <div id="tracks-container"></div>
-  </div>
-  
-  <script id="playlist-template" type="text/x-handlebars-template">
-    {{#each playlists}}
-    <div style="background-image:url({{images.0.url}})" data-playlist-id="{{id}}" data-playlist-name="{{name}}" class="cover">
-    <div class="content-name">{{name}}</div></div>
-    {{/each}}
-  </script>
-  
-  <script id="tracks-template" type="text/x-handlebars-template">
-    {{#each tracks}}
-    <div data-track-id="{{id}}" style="background-image:url(http://direct.rhapsody.com/imageserver/v2/albums/{{albumId}}/images/300x300.jpg)" class="cover">
-    <div class=content-name>{{name}}</div>
-    <audio controls class= "audio">
-      <source src="{{previewURL}}" type="audio/mpeg">
-    </audio>
-    </div>
-    {{/each}}
-  </script>
+    <!-- <label for="app_id">app_id:</label>
+    <input type="text" name="app_id" id="app_id">
+    <br>
+    <label for="app_key">app_key:</label>
+    <input type="text" name="app_key" id="app_key">
+    <br> -->
+
+
 
 
 

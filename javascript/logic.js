@@ -41,22 +41,33 @@ $(document).ready(function(){
         console.log(response);
   });
 
-
   //get the recipes on screen by creating cards for them to be held
   //create a function that only does the edamam search on click
   //pull the ingredients and title from the recipe and put into edamam format
   //create an API request with the chosen recipe information
   //return the results to the html
 
+//   $("#nutriSearch").on("click", function() { //PLEASE DON'T DELETE - work in progress :)
+
+//     var chosenRecipe = $(".recipeName");
+//     var dataAttr1 = recipeName.data("recipeName");
+//     var dataAttr2 = recipeName.data("ingredients");
+
+
+//   })
+
+
 
 // yummily recipe code
 
-
-    var queryURL; 
     var ingredient;
     var ingrNoSpace;
     var params = [];
     var refinedQuery;
+    var numResults = 0;
+    var queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
+
+
 
     //append allergy and course search parameters to end of url
     $('#accordion').on('change', ':checkbox', function () {
@@ -78,29 +89,15 @@ $(document).ready(function(){
         
         
     });
- 
-
 
 
     function recipeSearch(ingredient) {
-    
-        queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
-   
-   
-   
+        
+            refinedQuery = queryURL + params;
+            console.log(refinedQuery);
 
-    refinedQuery = queryURL + params;
-    console.log(refinedQuery);
-        
-        // $.ajax({
-        //     url: refinedQuery,
-        //     method: "GET"
-        // }).then(function(response) {
-        
-        //     // var results = response.data
-        //     console.log(response)
-        // })
-    };
+        };
+
 
 
     $("button").on("click", function(event) {
@@ -108,13 +105,99 @@ $(document).ready(function(){
         ingredient = $("#recipeSearch").val().trim();
         ingrNoSpace = ingredient.replace(/ /g, "+");
         recipeSearch(ingrNoSpace);
+
+        console.log(refinedQuery);
+
+        $.ajax({ //Stephanie -- I don't think this is taking in the ingrNoSpace when it searches
+            url: refinedQuery,
+            method: "GET"
+          })
+            .then(function(response) {
+                 
+              console.log(response); //getting the array to return! 
+              //console.log(response.matches[i].recipeName);
+
+                var recipeResults = response.matches[i]; //struggling with how to get to the information in the object
+
+                console.log(recipeResults); //returning undefined
+                
+                for(var i = 0; i <response.length; i++) { //not currently working but this should get the card of the recipe on the page 
+                    var recipeDiv = $("<div>");
+                    recipeDiv.addClass("card");
+                    recipeDiv.attr({"style": "18rem"});
+
+                    var image = $("<img>");
+                    image.addClass("card-img-top");
+                    image.attr("src", response.matches[i].smallImageUrls[0]);
+
+                    card.append(image);
+
+                    var cardBody = $("<div>");
+                    cardBody.addClass("card-body");
+
+                    var title = $("<h5>");
+                    title.addClass("card-title");
+                    title.text(response.matches[i].recipeName);
+
+                    cardBody.append(title);
+
+                    $("#recipeCards").append(recipeDiv);
+
+                    card.append(cardBody);
+                }
+       
+        });
+    
     });
+
+
+    
+
+
+
+
+});   
+    // function isObject(o) {
+    //     return typeof o == "object";
+    //     }
+    
+    // function findTitleObj(obj, category, info) {
+    //     for (key in obj) {
+    //         if (key == "recipeName") {
+    //         if (obj[key] == category) {
+    //             console.log(info); 
+    //         }
+
+    //         }else{
+    //         if (isObject(obj[key])) {
+    //             findInObj(obj[key], category, key); // recursion
+    //             }
+    //         }
+    //     }
+    // };
+
+    // function findIngrObj(obj, category, info) {
+    //     for (key in obj) {
+    //         if (key == "ingredients") {
+    //         if (obj[key] == category) {
+    //             console.log(info); 
+    //         }
+
+    //         }else{
+    //         if (isObject(obj[key])) {
+    //             findInObj(obj[key], category, key); // recursion
+    //             }
+    //         }
+    //     }
+    // };
+
+    // findIngrObj(refinedQuery, "broccoli", "matches");
+
+
+
+
 
 
 
 //     // var results = response.data
 //    // console.log(response)};
-
-
-
-});

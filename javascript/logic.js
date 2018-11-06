@@ -1,10 +1,14 @@
-//Nutrition API call
+//Nutrition API code
 $(document).ready(function(){
 
 // var app_key = 'df18daa5c0552a3eeceab2e56ffa2438';
 // var app_id = '816d5d34';
 
-  var recipe = {
+    var title = "";
+    var ingredients = [];
+
+// var recipe should be a link to the response from Yummily
+    var recipe = {
     "title": "Fresh Ham Roasted With Rye Bread and Dried Fruit Stuffing",
     "prep": "1. Have your butcher bone and butterfly the ham and score the fat in a diamond pattern. ...",
     "yield": "About 15 servings",
@@ -24,27 +28,35 @@ $(document).ready(function(){
       "1 egg, lightly beaten",
       "1 cup chicken broth, homemade or low-sodium canned"
     ]
-  }
+  };
 
-  $.ajax({
+  $.ajax ({
     method: "POST",
     url: "https://api.edamam.com/api/nutrition-details?app_id=816d5d34&app_key=df18daa5c0552a3eeceab2e56ffa2438",
     dataType: 'json',
     contentType: 'application/json',
     data: JSON.stringify(recipe)
+
   }).then(function(response) {
-    console.log(response);
-  })
+        console.log(response);
+  });
+
+
+  //get the recipes on screen by creating cards for them to be held
+  //create a function that only does the edamam search on click
+  //pull the ingredients and title from the recipe and put into edamam format
+  //create an API request with the chosen recipe information
+  //return the results to the html
 
 
 // yummily recipe code
 
 
-var queryURL; 
-var ingredient;
-var ingrNoSpace;
-var params = [];
-var refinedQuery;
+    var queryURL; 
+    var ingredient;
+    var ingrNoSpace;
+    var params = [];
+    var refinedQuery;
 
     //append allergy and course search parameters to end of url
     $('#accordion').on('change', ':checkbox', function () {
@@ -70,36 +82,39 @@ var refinedQuery;
 
 
 
-function recipeSearch(ingredient) {
+    function recipeSearch(ingredient) {
     
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
+        queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
    
    
    
 
-refinedQuery = queryURL + params;
-console.log(refinedQuery);
-    
-    // $.ajax({
-    //     url: refinedQuery,
-    //     method: "GET"
-    // }).then(function(response) {
-    
-    //     // var results = response.data
-    //     console.log(response)
-    // })
-}
+    refinedQuery = queryURL + params;
+    console.log(refinedQuery);
+        
+        // $.ajax({
+        //     url: refinedQuery,
+        //     method: "GET"
+        // }).then(function(response) {
+        
+        //     // var results = response.data
+        //     console.log(response)
+        // })
+    };
 
 
-$("button").on("click", function(event) {
-    event.preventDefault();
-    ingredient = $("#recipeSearch").val().trim();
-    ingrNoSpace = ingredient.replace(/ /g, "+");
-    recipeSearch(ingrNoSpace);
-})
+    $("button").on("click", function(event) {
+        event.preventDefault();
+        ingredient = $("#recipeSearch").val().trim();
+        ingrNoSpace = ingredient.replace(/ /g, "+");
+        recipeSearch(ingrNoSpace);
+    });
 
 
 
 //     // var results = response.data
-//     console.log(response)
-// })
+//    // console.log(response)};
+
+
+
+});

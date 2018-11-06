@@ -58,10 +58,12 @@ console.log(refinedQuery);
     // })
 }
 
+
 $("button").on("click", function(event) {
     event.preventDefault();
     ingredient = $("#recipeSearch").val().trim();
     ingrNoSpace = ingredient.replace(/ /g, "+");
     recipeSearch(ingrNoSpace);
 })
+
 

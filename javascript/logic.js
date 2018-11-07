@@ -135,14 +135,30 @@ function recipeSearch(ingredient) {
     })
 }
 
+
+
+
 //pulls the search term value to feed to the url in the recipesearch function
-$("button").on("click", function(event) {
+$("#button").on("click", function(event) {
+
     event.preventDefault();
     ingredient = $("#recipeSearch").val().trim();
     //replaces white space with '+' signs to encode for URL
     ingrNoSpace = ingredient.replace(/ /g, "+");
     //gives the URL encoded search term argument to the recipesearch function
     recipeSearch(ingrNoSpace);
+
+
+    //Adding user validation on search field  
+    $(".error").remove();
+   
+      if (ingredient.length < 1 & params.length < 1) {
+
+        console.log("This field is required")
+        $('#recipeSearch').after('<span class="error">This field is required</span>');
+      }
+
+
 });
 
 
@@ -166,6 +182,7 @@ function grabFullRecipe() {
 
     })
 }
+
 
 
 

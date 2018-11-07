@@ -161,7 +161,7 @@ function grabFullRecipe() {
         console.log(response);
         getNutrition()
 
-        //we might need to 
+        
 
 
     })

@@ -18,6 +18,9 @@
 
 $(document).ready(function() {
 
+  $('input,search,select').filter('[required]:visible')
+
+
 
 const playlistTemplateSource = document.getElementById('playlist-template').innerHTML;
 const playlistTemplate = Handlebars.compile(playlistTemplateSource);
@@ -30,9 +33,9 @@ const $tracks = $('#tracks-container');
 const $mainTitle = $('.header');
 const $backButton = $('.back-button');
 
-const getTopPlaylists = $.get('https://api.napster.com/v2.0/playlists?apikey=' + APIKey);
+//const getTopPlaylists = $.get('https://api.napster.com/v2.0/playlists?apikey=' + APIKey);
 
-console.log(getTopPlaylists);
+//console.log(getTopPlaylists);
 
 
 function getPlaylistTracks(id) { //grabbing playlist id, from the click event of the image of playlist

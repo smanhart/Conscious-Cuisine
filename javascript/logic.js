@@ -174,14 +174,40 @@ function grabFullRecipe() {
         //this gets entered into the nutrition function
         recipeTitle = response.name;
         recipeIngredints = response.ingredientLines;
-        console.log(response);
+        console.log(response); //pulls full recipe with images 
         getNutrition()
 
-        //we might need to 
+        console.log(response.name);
+        console.log(response.images[0].hostedMediumUrl);
 
+            var recipeDiv = $("<div>");
+            recipeDiv.addClass("card");
+            recipeDiv.attr({"style": "18rem"});
 
-    })
-}
+            var image = $("<img>");
+            image.addClass("card-img-top");
+            image.attr("src", response.images[0].hostedMediumUrl);
+
+            recipeDiv.append(image);
+
+            var cardBody = $("<div>");
+            cardBody.addClass("card-body");
+
+            var title = $("<h5>");
+            title.addClass("card-title");
+            title.text(response.name);
+
+            cardBody.append(title);
+
+            recipeDiv.append(title);
+
+            $("#recipeCards").append(recipeDiv);
+        
+
+    });
+
+    };
+
 
 
 

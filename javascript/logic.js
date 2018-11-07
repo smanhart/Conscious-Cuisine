@@ -5,6 +5,7 @@ var recipeTitle;
 var recipeIngredints;
 var titleObj;
 var ingObj;
+var ingrId;
 
 //once we have a nutrition button created, then this can be called in an onclick event
 function getNutrition() {
@@ -104,7 +105,7 @@ var refinedQuery;
 //runs the ajax call to get info based on search terms
 function recipeSearch(ingredient) {
     
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&requirePictures=true"
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&maxResult=3&requirePictures=true"
 
     refinedQuery = queryURL + params.pURL;
     console.log(params.pURL);
@@ -119,20 +120,16 @@ function recipeSearch(ingredient) {
 
         //I've temporarily taken out the for loop until we can get a click event so only one recipe is pulled for nutrition info
         // for ( var i = 0; i < response.matches.length; i++) {
-            recipeTitle = response.matches[3].recipeName;
-            recipeIngredints = response.matches[3].ingredients;
+           
+            ingrId = response.matches[1].id;
             console.log(recipeTitle);
             console.log(recipeIngredints);
 
-            //this is the function from the edamam code
-            getNutrition()
+            //we can put the code to put this on the page here, or we might just use the code from the selected recipe in getfullrecipe function
+
+            grabFullRecipe()
         // }
  
-
-
-       
-
-
 
        
     })
@@ -148,6 +145,27 @@ $("button").on("click", function(event) {
     recipeSearch(ingrNoSpace);
 });
 
+
+//this function takes the returned recipe from the search function and pulls the data we need to get nutritional values
+function grabFullRecipe() {
+ 
+    var queryURL = "http://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        //this gets entered into the nutrition function
+        recipeTitle = response.name;
+        recipeIngredints = response.ingredientLines;
+        console.log(response);
+        getNutrition()
+
+        //we might need to 
+
+
+    })
+}
 
 
 

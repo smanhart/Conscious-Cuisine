@@ -39,13 +39,15 @@
     </div>
     
     <div class="row">
-        <div class="col-sm-6">
+        <div class="offset-sm-2 col-sm-8">
           <div class="card">
             <div class="card-body">
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline">
                       <h3> Feeling hungry?</h3>
-                       <input class="form-control mr-sm-2 search" type="search" placeholder="Search" required aria-label="Search">
+
+                       <input class="form-control mr-sm-2" id="recipeSearch" name= "q" type="search" placeholder="Search" aria-label="Search" required aria-required="true">
+
                     </form>
                   </nav>
               <div id="accordion">
@@ -99,46 +101,23 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              
-              <h5 class="card-title">Recipe</h5>
-              <p class="card-text">Content of recipe</p>
-              
-            </div>
-          </div>
-        </div>
+        
       </div>
-     
-      
-  <!-- Napster tester HTML -->
-  <div class="container">
-    <div class="header">
-      Top Playlists
-    </div>
-    <div class="back-button"><a>Back to playlists</a></div>
-    <div id="playlist-container"></div>
-    <div id="tracks-container"></div>
-  </div>
-  
-  <script id="playlist-template" type="text/x-handlebars-template">
-    {{#each playlists}}
-    <div style="background-image:url({{images.0.url}})" data-playlist-id="{{id}}" data-playlist-name="{{name}}" class="cover">
-    <div class="content-name">{{name}}</div></div>
-    {{/each}}
-  </script>
-  
-  <script id="tracks-template" type="text/x-handlebars-template">
-    {{#each tracks}}
-    <div data-track-id="{{id}}" style="background-image:url(http://direct.rhapsody.com/imageserver/v2/albums/{{albumId}}/images/300x300.jpg)" class="cover">
-    <div class=content-name>{{name}}</div>
-    <audio controls class= "audio">
-      <source src="{{previewURL}}" type="audio/mpeg">
-    </audio>
-    </div>
-    {{/each}}
-  </script>
+      <div class="row">
+          <div class="offset-sm-2 col-sm-8">
+              <div class="card">
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Recipe</h5>
+                  <p class="card-text">Content of recipe</p>
+                  
+                </div>
+              </div>
+            </div>
+
+      </div>
+
+
     <!-- <div class="container" id="shopping-list">
       
       <div class="card mb-4">

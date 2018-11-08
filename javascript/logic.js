@@ -107,7 +107,7 @@ var refinedQuery;
 //runs the ajax call to get info based on search terms
 function recipeSearch(ingredient) {
     
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&maxResult=3&requirePictures=true"
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&maxResult=6&requirePictures=true"
 
     refinedQuery = queryURL + params.pURL;
     console.log(params.pURL);
@@ -277,7 +277,7 @@ function grabFullRecipe() {
         });
     });
 
-    };
+}
 
 
 

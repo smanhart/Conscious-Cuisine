@@ -174,14 +174,59 @@ function grabFullRecipe() {
         //this gets entered into the nutrition function
         recipeTitle = response.name;
         recipeIngredints = response.ingredientLines;
-        console.log(response);
+        console.log(response); //pulls full recipe with images 
         getNutrition()
 
-        //we might need to 
+            //appending the recipe cards to the page
+            var recipeDiv = $("<div>");
+            recipeDiv.addClass("card");
+            recipeDiv.attr({"style": "18rem"});
 
+            var image = $("<img>");
+            image.addClass("card-img-top");
+            image.attr("src", response.images[0].hostedMediumUrl); //card image
 
-    })
-}
+            recipeDiv.append(image);
+
+            var cardBody = $("<div>");
+            cardBody.addClass("card-body");
+
+            var title = $("<h5>");
+            title.addClass("card-title");
+            title.text(response.name); //recipe title
+
+            var cardContents = $("<ul>");
+            cardContents.addClass("list-group list-group-flush");
+
+            var cardList1 = $("<li>");
+            cardList1.addClass("list-group-item");
+            cardList1.text(response.source.sourceDisplayName); //source of recipe
+
+            var cardList2 = $("<li>");
+            cardList2.addClass("list-group-item");
+            cardList2.text(response.source.sourceRecipeUrl); //url of recipe
+
+            var cardList3 = $("<li>");
+            cardList3.addClass("list-group-item");
+            cardList3.text(response.totalTime); //time to cook recipe
+
+            cardContents.append(cardList1);
+            cardContents.append(cardList2);
+            cardContents.append(cardList3);
+
+            cardBody.append(title);
+            cardBody.append(cardContents);
+
+            recipeDiv.append(title);
+            recipeDiv.append(cardBody);
+
+            $("#recipeCards").append(recipeDiv);
+        
+
+    });
+
+    };
+
 
 
 

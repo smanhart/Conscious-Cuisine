@@ -70,11 +70,7 @@ function recipeSearch(ingredient) {
 
     queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=3&requirePictures=true"
 
-    console.log(queryURL)
-
-    // refinedQuery = queryURL + params;  
-    // console.log(params);
-    // console.log(refinedQuery);
+    // console.log(queryURL)
 
     $.ajax({
         url: queryURL,
@@ -82,14 +78,9 @@ function recipeSearch(ingredient) {
     }).then(function (response) {
         console.log(response)
 
-
-        //I've temporarily taken out the for loop until we can get a click event so only one recipe is pulled for nutrition info
         for (var i = 0; i < response.matches.length; i++) {
 
             ingrId = response.matches[i].id;
-
-
-            //we can put the code to put this on the page here, or we might just use the code from the selected recipe in getfullrecipe function
 
             grabFullRecipe()
         }
@@ -107,25 +98,20 @@ $("#button").on("click", function (event) {
     event.preventDefault();
 
     if ($("#recipeSearch").val() === "") {
-        
-        alert("Please enter a search term")
+
+        //Adding user validation on search field 
+        $('#recipeSearch').after('<span class="error">This field is required</span>');
+
     } else {
 
-        ingredient = $("#recipeSearch").val().trim();
-        //replaces white space with '+' signs to encode for URL
-        ingrNoSpace = ingredient.replace(/ /g, "+");
-        //gives the URL encoded search term argument to the recipesearch function
-        recipeSearch(ingrNoSpace);
+            $("#recipeCards").empty();
+            ingredient = $("#recipeSearch").val().trim();
+            //replaces white space with '+' signs to encode for URL
+            ingrNoSpace = ingredient.replace(/ /g, "+");
+            //gives the URL encoded search term argument to the recipesearch function
+            recipeSearch(ingrNoSpace);
+            $("#recipeSearch").val("");
 
-
-        //Adding user validation on search field  
-        $(".error").remove();
-
-        if (ingredient.length < 1 & params.length < 1) {
-
-            console.log("This field is required")
-            $('#recipeSearch').after('<span class="error">This field is required</span>');
-        }
     }
 
 });

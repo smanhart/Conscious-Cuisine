@@ -47,7 +47,7 @@ function getNutrition() {
 
   $.ajax({
     method: "POST",
-    url: "https://api.edamam.com/api/nutrition-details?app_id=816d5d34&app_key=df18daa5c0552a3eeceab2e56ffa2438",
+    //url: "https://api.edamam.com/api/nutrition-details?app_id=816d5d34&app_key=df18daa5c0552a3eeceab2e56ffa2438",
     dataType: 'json',
     contentType: 'application/json',
     data: JSON.stringify(recipe)
@@ -105,7 +105,7 @@ var refinedQuery;
 //runs the ajax call to get info based on search terms
 function recipeSearch(ingredient) {
     
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&maxResult=3&requirePictures=true"
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&maxResult=6&requirePictures=true"
 
     refinedQuery = queryURL + params.pURL;
     console.log(params.pURL);
@@ -180,7 +180,7 @@ function grabFullRecipe() {
             //appending the recipe cards to the page
             var recipeDiv = $("<div>");
             recipeDiv.addClass("card");
-            recipeDiv.attr({"style": "9rem"});
+            recipeDiv.attr({"style": "18rem"});
 
             var image = $("<img>");
             image.addClass("card-img-top");
@@ -202,9 +202,13 @@ function grabFullRecipe() {
             cardList1.addClass("list-group-item");
             cardList1.text(response.source.sourceDisplayName); //source of recipe
 
-            var cardList2 = $("<li>");
+            var cardList2 = $("<a>");
             cardList2.addClass("list-group-item");
-            cardList2.text(response.source.sourceRecipeUrl); //url of recipe
+            cardList2.text("View Recipe");
+            cardList2.attr('target', '_blank');
+            cardList2.attr("href", response.attribution.url);
+
+            //cardList2.text(response.source.sourceRecipeUrl); //url of recipe
 
             var cardList3 = $("<li>");
             cardList3.addClass("list-group-item");

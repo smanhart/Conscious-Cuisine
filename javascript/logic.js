@@ -47,7 +47,7 @@ function getNutrition() {
 
   $.ajax({
     method: "POST",
-    url: "https://api.edamam.com/api/nutrition-details?app_id=816d5d34&app_key=df18daa5c0552a3eeceab2e56ffa2438",
+    //url: "https://api.edamam.com/api/nutrition-details?app_id=816d5d34&app_key=df18daa5c0552a3eeceab2e56ffa2438",
     dataType: 'json',
     contentType: 'application/json',
     data: JSON.stringify(recipe)
@@ -202,9 +202,13 @@ function grabFullRecipe() {
             cardList1.addClass("list-group-item");
             cardList1.text(response.source.sourceDisplayName); //source of recipe
 
-            var cardList2 = $("<li>");
+            var cardList2 = $("<a>");
             cardList2.addClass("list-group-item");
-            cardList2.text(response.source.sourceRecipeUrl); //url of recipe
+            cardList2.text("View Recipe");
+            cardList2.attr('target', '_blank');
+            cardList2.attr("href", response.attribution.url);
+
+            //cardList2.text(response.source.sourceRecipeUrl); //url of recipe
 
             var cardList3 = $("<li>");
             cardList3.addClass("list-group-item");

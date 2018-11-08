@@ -56,7 +56,7 @@ function getNutrition() {
   })
 };
 
-
+function addNutrition
 
 // yummily recipe code
 
@@ -206,14 +206,35 @@ function grabFullRecipe() {
             cardList2.addClass("list-group-item");
             cardList2.text("View Recipe");
             cardList2.attr('target', '_blank');
-            cardList2.attr("href", response.attribution.url);
-
-            //cardList2.text(response.source.sourceRecipeUrl); //url of recipe
+            cardList2.attr("href", response.attribution.url);     //url of recipe
 
             var cardList3 = $("<li>");
             cardList3.addClass("list-group-item");
             cardList3.text(response.totalTime); //time to cook recipe
 
+            //Accordian for nutrition info
+            var accordian = $("<div>");
+            accordian.attr("id", "accordian");
+
+            var accCard = $("<div>");
+            accCard.addClass("card");
+
+            var accCardHeader = $("<div>");
+            accCardHeader.addClass("card-header");
+            accCardHeader.attr("id", "nutriHeading");
+
+            var nutriHeading = $("<h5>");
+            nutriHeading.addClass("mb-0");
+
+            var collapseBtn = $("<button>");
+            collapseBtn.addClass("btn btn-link");
+            collapseBtn.attr("data-toggle", "collapse");
+            collapseBtn.attr("data-target", "#collapseNutri");
+            collapseBtn.attr("aria-expanded", "true");
+            collapseBtn.attr("aria-controls", "collapseOne");
+            collapseBtn.text("Nutrition Information");
+            
+            //Putting all the elements together for the recipe cards
             cardContents.append(cardList1);
             cardContents.append(cardList2);
             cardContents.append(cardList3);
@@ -223,6 +244,14 @@ function grabFullRecipe() {
 
             recipeDiv.append(title);
             recipeDiv.append(cardBody);
+
+            //Adding the accordian to the recipe card
+            accordian.append(accCard);
+            accCard.append(accCardHeader);
+            accCardHeader.append(nutriHeading);
+            nutriHeading.append(collapseBtn);
+
+            recipeDiv.append(accordian);
 
             $("#recipeCards").append(recipeDiv);
         

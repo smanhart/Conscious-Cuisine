@@ -119,16 +119,16 @@ function recipeSearch(ingredient) {
 
 
         //I've temporarily taken out the for loop until we can get a click event so only one recipe is pulled for nutrition info
-        // for ( var i = 0; i < response.matches.length; i++) {
+        for ( var i = 0; i < response.matches.length; i++) {
            
-            ingrId = response.matches[1].id;
+            ingrId = response.matches[i].id;
             console.log(recipeTitle);
             console.log(recipeIngredints);
 
             //we can put the code to put this on the page here, or we might just use the code from the selected recipe in getfullrecipe function
 
             grabFullRecipe()
-        // }
+        }
  
 
        

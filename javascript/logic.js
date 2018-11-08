@@ -52,7 +52,7 @@ $('#collapseOne').on('change', ':checkbox', function () {
     $("#collapseOne input[type=checkbox]").each(function () {
         if ($(this).is(':checked')) {
             console.log($(this).val())
-            params.push("&allowedCourse[]course^course-" + $(this).val());
+            params.push("&allowedCourse[]=course^course-" + $(this).val());
 
         }
     })
@@ -66,14 +66,18 @@ $('#collapseOne').on('change', ':checkbox', function () {
 //runs the ajax call to get info based on search terms
 function recipeSearch(ingredient) {
 
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + "&maxResult=3&requirePictures=true"
+    queryParams = params.join("")
 
-    refinedQuery = queryURL + params;
-    console.log(params);
-    console.log(refinedQuery);
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=3&requirePictures=true"
+
+    console.log(queryURL)
+
+    // refinedQuery = queryURL + params;  
+    // console.log(params);
+    // console.log(refinedQuery);
 
     $.ajax({
-        url: refinedQuery,
+        url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response)
@@ -83,7 +87,7 @@ function recipeSearch(ingredient) {
         for (var i = 0; i < response.matches.length; i++) {
 
             ingrId = response.matches[i].id;
-           
+
 
             //we can put the code to put this on the page here, or we might just use the code from the selected recipe in getfullrecipe function
 
@@ -100,24 +104,29 @@ function recipeSearch(ingredient) {
 
 //pulls the search term value to feed to the url in the recipesearch function
 $("#button").on("click", function (event) {
-
     event.preventDefault();
-    ingredient = $("#recipeSearch").val().trim();
-    //replaces white space with '+' signs to encode for URL
-    ingrNoSpace = ingredient.replace(/ /g, "+");
-    //gives the URL encoded search term argument to the recipesearch function
-    recipeSearch(ingrNoSpace);
+
+    if ($("#recipeSearch").val() === "") {
+        
+        alert("Please enter a search term")
+    } else {
+
+        ingredient = $("#recipeSearch").val().trim();
+        //replaces white space with '+' signs to encode for URL
+        ingrNoSpace = ingredient.replace(/ /g, "+");
+        //gives the URL encoded search term argument to the recipesearch function
+        recipeSearch(ingrNoSpace);
 
 
-    //Adding user validation on search field  
-    $(".error").remove();
+        //Adding user validation on search field  
+        $(".error").remove();
 
-    if (ingredient.length < 1 & params.length < 1) {
+        if (ingredient.length < 1 & params.length < 1) {
 
-        console.log("This field is required")
-        $('#recipeSearch').after('<span class="error">This field is required</span>');
+            console.log("This field is required")
+            $('#recipeSearch').after('<span class="error">This field is required</span>');
+        }
     }
-
 
 });
 

@@ -22,15 +22,15 @@ function getNutrition() {
     console.log(recipe);
 
 
-    //   $.ajax({
-    //     method: "POST",
-    //     url: "https://api.edamam.com/api/nutrition-details?app_id=ce13381c&app_key=4967284ccc86e52d874362eb512b2e94",
-    //     dataType: 'json',
-    //     contentType: 'application/json',
-    //     data: JSON.stringify(recipe)
-    //   }).then(function(response) {
-    //     console.log(response);
-    //   })
+      $.ajax({
+        method: "POST",
+        url: "https://api.edamam.com/api/nutrition-details?app_id=ce13381c&app_key=4967284ccc86e52d874362eb512b2e94",
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(recipe)
+      }).then(function(response) {
+        console.log(response);
+      })
 };
 
 
@@ -44,7 +44,6 @@ var params = [];
 var refinedQuery;
 
 
-//Ignore this code for the parameter selection, we may need to icebox this functionality until everything else is working smoothly
 //append allergy and course search parameters to end of url
 $('#collapseOne').on('change', ':checkbox', function () {
 
@@ -57,15 +56,12 @@ $('#collapseOne').on('change', ':checkbox', function () {
         }
     })
     console.log(params);
-
-
 });
-
 
 
 //runs the ajax call to get info based on search terms
 function recipeSearch(ingredient) {
-
+    //takes the commas out of the array before adding to url
     queryParams = params.join("")
 
     queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=3&requirePictures=true"
@@ -81,16 +77,10 @@ function recipeSearch(ingredient) {
         for (var i = 0; i < response.matches.length; i++) {
 
             ingrId = response.matches[i].id;
-
             grabFullRecipe()
         }
-
-
-
     })
 }
-
-
 
 
 //pulls the search term value to feed to the url in the recipesearch function
@@ -111,7 +101,6 @@ $("#button").on("click", function (event) {
             //gives the URL encoded search term argument to the recipesearch function
             recipeSearch(ingrNoSpace);
             $("#recipeSearch").val("");
-
     }
 
 });

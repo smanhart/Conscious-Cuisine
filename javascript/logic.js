@@ -153,7 +153,7 @@ function grabFullRecipe() {
 
         var cardList1 = $("<li>");
         cardList1.addClass("list-group-item");
-        cardList1.text(response.source.sourceDisplayName); //source of recipe
+        cardList1.text("Recipe Source: " + response.source.sourceDisplayName); //source of recipe
 
         var cardList2 = $("<a>");
         cardList2.addClass("list-group-item");
@@ -163,7 +163,7 @@ function grabFullRecipe() {
 
         var cardList3 = $("<li>");
         cardList3.addClass("list-group-item");
-        cardList3.text(response.totalTime); //time to cook recipe
+        cardList3.text("Cook Time: " + response.totalTime); //time to cook recipe
 
         //Accordian for nutrition info
         var accordion = $("<div>");

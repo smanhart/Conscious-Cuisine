@@ -133,6 +133,7 @@ function grabFullRecipe() {
         //appending the recipe cards to the page
         var recipeDiv = $("<div>");
         recipeDiv.addClass("card");
+        recipeDiv.attr("id", "recipeCard")
         recipeDiv.attr({ "style": "18rem" });
 
         var image = $("<img>");
@@ -182,6 +183,7 @@ function grabFullRecipe() {
         var collapseBtn = $("<button>");
         collapseBtn.addClass("btn btn-link");
         collapseBtn.addClass("nutriBtn")
+        collapseBtn.attr("id", "nutriID")
         collapseBtn.attr("data-toggle", "collapse");
         collapseBtn.attr("data-target", "#collapseNutri");
         collapseBtn.attr("aria-expanded", "true");

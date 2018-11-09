@@ -115,7 +115,7 @@ $("#button").on("click", function (event) {
 //this function takes the returned recipe from the search function and pulls the data we need to get nutritional values
 function grabFullRecipe() {
 
-    var queryURL = "http://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
+    var queryURL = "https://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
 
     $.ajax({
         url: queryURL,
@@ -129,8 +129,6 @@ function grabFullRecipe() {
         console.log(response); //pulls full recipe with images 
         getNutrition(recipeTitle, function(nutrition) {
             console.log("nutrition inside", nutrition);
-            
-        
 
         //appending the recipe cards to the page
         var recipeDiv = $("<div>");
@@ -210,9 +208,6 @@ function grabFullRecipe() {
 
         recipeDiv.append(title);
         recipeDiv.append(cardBody);
-
-        $("#recipeCards").append(recipeDiv);
-
 
         //Adding the accordian to the recipe card
         accordion.append(accCard);

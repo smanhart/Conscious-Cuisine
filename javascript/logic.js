@@ -115,7 +115,7 @@ $("#button").on("click", function (event) {
 //this function takes the returned recipe from the search function and pulls the data we need to get nutritional values
 function grabFullRecipe() {
 
-    var queryURL = "http://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
+    var queryURL = "https://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
 
     $.ajax({
         url: queryURL,
@@ -129,8 +129,6 @@ function grabFullRecipe() {
         console.log(response); //pulls full recipe with images 
         getNutrition(recipeTitle, function(nutrition) {
             console.log("nutrition inside", nutrition);
-            
-        
 
         //appending the recipe cards to the page
         var recipeDiv = $("<div>");
@@ -155,7 +153,7 @@ function grabFullRecipe() {
 
         var cardList1 = $("<li>");
         cardList1.addClass("list-group-item");
-        cardList1.text(response.source.sourceDisplayName); //source of recipe
+        cardList1.text("Recipe Source: " + response.source.sourceDisplayName); //source of recipe
 
         var cardList2 = $("<a>");
         cardList2.addClass("list-group-item");
@@ -165,7 +163,7 @@ function grabFullRecipe() {
 
         var cardList3 = $("<li>");
         cardList3.addClass("list-group-item");
-        cardList3.text(response.totalTime); //time to cook recipe
+        cardList3.text("Cook Time: " + response.totalTime); //time to cook recipe
 
         //Accordian for nutrition info
         var accordion = $("<div>");
@@ -198,7 +196,50 @@ function grabFullRecipe() {
 
         var collapseCard = $("<div>");
         collapseCard.addClass("card-body");
-        collapseCard.text("Fat (g): " + nutrition.totalNutrients.FAT.quantity);
+
+        var collapseContents = $("<ul>");
+        collapseContents.addClass("list-group list-group-flush");
+
+        //appending nutrition information from the Edamam API
+        var collapseList1 = $("<li>");
+        collapseList1.addClass("list-group-item");
+        collapseList1.text("Fat (g): " + (nutrition.totalNutrients.FAT.quantity).toFixed(1));
+
+        var collapseList2 = $("<li>");
+        collapseList2.addClass("list-group-item");
+        collapseList2.text("Saturated Fat (g): " + (nutrition.totalNutrients.FASAT.quantity).toFixed(1));
+
+        var collapseList3 = $("<li>");
+        collapseList3.addClass("list-group-item");
+        collapseList3.text("Sodium (mg): " + (nutrition.totalNutrients.NA.quantity).toFixed(1));
+
+        var collapseList4 = $("<li>");
+        collapseList4.addClass("list-group-item");
+        collapseList4.text("Carbohydrates (g): " + (nutrition.totalNutrients.CHOCDF.quantity).toFixed(1));
+
+        var collapseList5 = $("<li>");
+        collapseList5.addClass("list-group-item");
+        collapseList5.text("Sugar (g): " + (nutrition.totalNutrients.SUGAR.quantity).toFixed(1));
+        
+        var collapseList6 = $("<li>");
+        collapseList6.addClass("list-group-item");
+        collapseList6.text("Protein (g): " + (nutrition.totalNutrients.PROCNT.quantity).toFixed(1));
+        
+        var collapseList7 = $("<li>");
+        collapseList7.addClass("list-group-item");
+        collapseList7.text("Fiber (g): " + (nutrition.totalNutrients.FIBTG.quantity).toFixed(1));
+
+        var collapseList8 = $("<li>");
+        collapseList8.addClass("list-group-item");
+        collapseList8.text("Iron (mg): " + (nutrition.totalNutrients.FE.quantity).toFixed(1));
+        
+        var collapseList9 = $("<li>");
+        collapseList9.addClass("list-group-item");
+        collapseList9.text("Vitamin C (mg): " + (nutrition.totalNutrients.VITC.quantity).toFixed(1));
+
+        var collapseList10 = $("<li>");
+        collapseList10.addClass("list-group-item");
+        collapseList10.text("Vitamin D (mg): " + (nutrition.totalNutrients.VITD.quantity).toFixed(1));
 
         //Putting all the elements together for the recipe cards
         cardContents.append(cardList1);
@@ -211,9 +252,6 @@ function grabFullRecipe() {
         recipeDiv.append(title);
         recipeDiv.append(cardBody);
 
-        $("#recipeCards").append(recipeDiv);
-
-
         //Adding the accordian to the recipe card
         accordion.append(accCard);
         accCard.append(accCardHeader);
@@ -222,6 +260,19 @@ function grabFullRecipe() {
 
         collapseBtn.append(collapseBody);
         collapseBody.append(collapseCard);
+        collapseCard.append(collapseContents);
+
+        //Adding the list contents for the accordion
+        collapseContents.append(collapseList1);
+        collapseContents.append(collapseList2);
+        collapseContents.append(collapseList3);
+        collapseContents.append(collapseList4);
+        collapseContents.append(collapseList5);
+        collapseContents.append(collapseList6);
+        collapseContents.append(collapseList7);
+        collapseContents.append(collapseList8);
+        collapseContents.append(collapseList9);
+        collapseContents.append(collapseList10);
 
         recipeDiv.append(accordion);
 

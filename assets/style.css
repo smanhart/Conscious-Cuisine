@@ -1,10 +1,14 @@
 .main {
-  background-color: #be9b7b; }
+  background-color: #be9b7b;
+  font-family: 'Montserrat', sans-serif; }
   .main-sidebar {
     border: 1px solid; }
 
 nav {
   background-color: oldlace; }
+  nav h1 {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 4rem; }
 
 .card {
   background-color: oldlace; }

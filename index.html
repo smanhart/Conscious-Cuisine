@@ -1,144 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Project 1</title>
-   <!-- Bootstrap CSS -->
-   <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  <title>Conscious Cuisine</title>
+  <!-- Bootstrap CSS -->
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-  crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="assets/style.css">
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
+
 <body>
   <div class="main">
-
-      <div class="row">
-          <div class="offset-sm-2 col-sm-8">
-            <div class="card">
-              <div class="card-body">
-                  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img class="d-block w-100" src="assets/images/food1.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                          <img class="d-block w-100" src="assets/images/food2.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                          <img class="d-block w-100" src="assets/images/food3.jpg" alt="Third slide">
-                        </div>
-                      </div> 
-                    </div>
-                 </div>
+    <div class="row">
+      <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-light">
+              <h1 >Conscious Cuisine</h1>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                
+                <div class="my-2 my-lg-0">
+                  <h4>See the nutrition behind your recipes!</h4>
+                </div>
+              </div>
+            </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-sm-2 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="assets/images/food1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="assets/images/food2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="assets/images/food3.jpg" alt="Third slide">
+                </div>
+              </div>
             </div>
           </div>
-    
-      
-      
+        </div>
+      </div>
+
+
+
     </div>
-    
+
     <div class="row">
-        <div class="offset-sm-2 col-sm-8">
-          <div class="card">
-            <div class="card-body">
-                <nav class="navbar navbar-light bg-light">
-                    <form class="form-inline">
-                      <h3> Feeling hungry?</h3>
+      <div class="offset-sm-2 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <nav class="navbar navbar-light">
+              <form class="form-inline">
+                <h3> Feeling hungry?</h3>
 
-                       <input class="form-control mr-sm-2" id="recipeSearch" name= "q" type="search" placeholder="Search" aria-label="Search" required aria-required="true">
+                <input class="form-control mr-sm-2" id="recipeSearch" name="q" type="search" placeholder="Search"
+                  aria-label="Search" required aria-required="true">
 
-                    </form>
-                  </nav>
-              <div id="accordion">
-                  <div class="card">
-                    <div class="card-header" id="headingOne">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Courses
-                        </button>
-                      </h5>
-                    </div>
-                
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                      <div class="card-body">
-                          <input type="checkbox" id= "appetizer" name="course1" value="Appetizers" class="lgchbx"> Appetizer<br>
-                          <input type="checkbox" id= "main" name="course2" value="Main Dishes" class="lgchbx"> Main Course<br>
-                          <input type="checkbox" id= "soup" name="course3" value="Soups" class="lgchbx"> Soup<br>
-                          <input type="checkbox" id= "Salad" name="course4" value="Salads" class="lgchbx"> Salad<br>
-                          <input type="checkbox" id= "bread" name="course5" value="Breads" class="lgchbx"> Bread<br>
-                          <input type="checkbox" id= "dessert" name="course6" value="Desserts" class="lgchbx"> Dessert<br>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <div class="card-header" id="headingTwo">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Allergies
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                      <div class="card-body">
-                    
-                          <input type="checkbox" name="allergy1" value="dairy" class="lgchbx"> Dairy<br>
-                          <input type="checkbox" name="allergy2" value="egg" class="lgchbx"> Egg<br>
-                          <input type="checkbox" name="allergy3" value="gluten" class="lgchbx"> Gluten<br>
-                          <input type="checkbox" name="allergy4" value="peanut" class="lgchbx"> Peanut<br>
-                          <input type="checkbox" name="allergy5" value="treenut" class="lgchbx"> Tree Nut<br>
-                          <input type="checkbox" name="allergy1" value="seafood" class="lgchbx"> Seafood<br>
-                          <input type="checkbox" name="allergy1" value="sesame" class="lgchbx"> Sesame<br>
-                          <input type="checkbox" name="allergy1" value="soy" class="lgchbx"> Soy<br>
-                          <input type="checkbox" name="allergy1" value="wheat" class="lgchbx"> Wheat<br>
-                          <input type="checkbox" name="allergy1" value="sulfite" class="lgchbx"> Sulfite<br>
-                      </div>
-                    </div>
+              </form>
+            </nav>
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">
+                      Courses
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <input type="checkbox" id="appetizer" name="course1" value="Appetizers" class="lgchbx"> Appetizer<br>
+                    <input type="checkbox" id="main" name="course2" value="Main Dishes" class="lgchbx"> Main Course<br>
+                    <input type="checkbox" id="soup" name="course3" value="Soups" class="lgchbx"> Soup<br>
+                    <input type="checkbox" id="Salad" name="course4" value="Salads" class="lgchbx"> Salad<br>
+                    <input type="checkbox" id="bread" name="course5" value="Breads" class="lgchbx"> Bread<br>
+                    <input type="checkbox" id="dessert" name="course6" value="Desserts" class="lgchbx"> Dessert<br>
                   </div>
                 </div>
-                <br>
-                <button class="btn btn-outline-success my-2 my-sm-0" id = "button" type="submit">Search</button>
+              </div>
+              <div class="card">
+                <!-- <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                      aria-expanded="false" aria-controls="collapseTwo">
+                      Allergies
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+
+                    <input type="checkbox" name="allergy1" value="dairy" class="lgchbx"> Dairy<br>
+                    <input type="checkbox" name="allergy2" value="egg" class="lgchbx"> Egg<br>
+                    <input type="checkbox" name="allergy3" value="gluten" class="lgchbx"> Gluten<br>
+                    <input type="checkbox" name="allergy4" value="peanut" class="lgchbx"> Peanut<br>
+                    <input type="checkbox" name="allergy5" value="treenut" class="lgchbx"> Tree Nut<br>
+                    <input type="checkbox" name="allergy1" value="seafood" class="lgchbx"> Seafood<br>
+                    <input type="checkbox" name="allergy1" value="sesame" class="lgchbx"> Sesame<br>
+                    <input type="checkbox" name="allergy1" value="soy" class="lgchbx"> Soy<br>
+                    <input type="checkbox" name="allergy1" value="wheat" class="lgchbx"> Wheat<br>
+                    <input type="checkbox" name="allergy1" value="sulfite" class="lgchbx"> Sulfite<br>
+                  </div>
+                </div> -->
+              </div>
             </div>
+            <!-- <br> -->
+            <button class="btn my-2 my-sm-0" id="button" type="submit">Search</button>
           </div>
         </div>
-        
       </div>
-      <div class="row justify-content-md-center">
-         
-        <div class="card-group" id="recipeCards">
 
-        </div>
+    </div>
+    <div class="row justify-content-md-center">
 
-       </div>  
-          </div>
-        </div>
-      </div>                 
+      <div class="card-group" id="recipeCards">
+
+      </div>
+
+    </div>
   </div>
-</div>
-</div>
-</div>
-<footer> <div class="yummly">Powered by <a href='http://www.yummly.co/recipes'><img alt='Yummly' src='https://static.yummly.co/api-logo.png'/></a></div> 
-   <div class="edamam" id="edamam-badge" data-color="white"></div>
-</footer>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <footer>
+    <div class="yummly">Powered by <a href='http://www.yummly.co/recipes'><img alt='Yummly' src='assets/images/yummlylogo.png' /></a></div>
+    <div class="edamam" id="edamam-badge" data-color="transparent"></div>
+  </footer>
 
   <!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-  crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <script src="javascript/logic.js"></script>
-   
+
 </body>
+
 </html>
-    
-  
-  
-  
-     

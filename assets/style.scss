@@ -2,8 +2,17 @@
     background-color:#be9b7b ;
     &-sidebar { border: 1px solid; }
   }
-  .search {
-      margin-left: 20px;
+
+nav {
+    background-color: oldlace;
+}
+
+.card {
+    background-color: oldlace;
+}
+
+  #recipeSearch {
+      margin-left: 10px;
   }
   .card-header {
     background-color: #580000;
@@ -11,11 +20,56 @@
         color: white;
     }
   }
-.card-body {
+ .card-body {
     color: brown;
-}
-
-.container-fluid{
+ }
+ 
+ 
+ #button  {
+    background-color: #580000;
+    color: oldlace;
+ }
+ #button:active {
+    background-color: #580000;
+    transform: translateY(4px);
+    text-emphasis-color: #580000;
+ }
+ 
+ #button:hover {
+ 
+    opacity:1.0;
+    background-color: #641010;
+ 
+    box-shadow:none;
+ 
+    }
+ 
+ // Course and Allergies Buttons
+ .btn  {
+    background-color: #be9b7b;
+    color: oldlace;
+ 
+        .btn:hover {background-color: blue}
+ }
+ .btn:active {
+    color: red;
+    transform: translateY(4px);
+ }
+ //======================
+ .container-fluid{
     flex-wrap:wrap;
   }
-
+ 
+  .yummly {
+      color:grey;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight:bold;
+      text-align:center;
+  }
+  .edamam {
+      text-align:center;
+  }
+ footer {
+    background-color:oldlace;
+ }

@@ -8,7 +8,8 @@ nav {
   background-color: oldlace; }
   nav h1 {
     font-family: 'Homemade Apple', cursive;
-    font-size: 4rem; }
+    font-size: 4rem;
+    padding-top: 15px; }
 
 .card {
   background-color: oldlace; }

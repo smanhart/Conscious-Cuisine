@@ -24,16 +24,16 @@ console.log(title);
      console.log(recipe);
 
 
-//   $.ajax({
-//     method: "POST",
-//     url: "https://api.edamam.com/api/nutrition-details?app_id=ce13381c&app_key=4967284ccc86e52d874362eb512b2e94",
-//     dataType: 'json',
-//     contentType: 'application/json',
-//     data: JSON.stringify(recipe)
-//   }).then(function(response) {
-//     //console.log(response);
-//     callback(response);
-//   })
+  $.ajax({
+    method: "POST",
+    url: "https://api.edamam.com/api/nutrition-details?app_id=ce13381c&app_key=4967284ccc86e52d874362eb512b2e94",
+    dataType: 'json',
+    contentType: 'application/json',
+    data: JSON.stringify(recipe)
+  }).then(function(response) {
+    //console.log(response);
+    callback(response);
+  })
 
 };
 
@@ -134,6 +134,7 @@ function grabFullRecipe() {
         //appending the recipe cards to the page
         var recipeDiv = $("<div>");
         recipeDiv.addClass("card");
+        recipeDiv.attr("id", "recipeCard")
         recipeDiv.attr({ "style": "18rem" });
 
         var image = $("<img>");
@@ -183,6 +184,7 @@ function grabFullRecipe() {
         var collapseBtn = $("<button>");
         collapseBtn.addClass("btn btn-link");
         collapseBtn.addClass("nutriBtn")
+        collapseBtn.attr("id", "nutriID")
         collapseBtn.attr("data-toggle", "collapse");
         collapseBtn.attr("data-target", "#collapseNutri");
         collapseBtn.attr("aria-expanded", "true");
@@ -238,9 +240,9 @@ function grabFullRecipe() {
         collapseList9.addClass("list-group-item");
         collapseList9.text("Vitamin C (mg): " + (nutrition.totalNutrients.VITC.quantity).toFixed(1));
 
-        var collapseList10 = $("<li>");
-        collapseList10.addClass("list-group-item");
-        collapseList10.text("Vitamin D (mg): " + (nutrition.totalNutrients.VITD.quantity).toFixed(1));
+        // var collapseList10 = $("<li>");
+        // collapseList10.addClass("list-group-item");
+        // collapseList10.text("Vitamin D (mg): " + (nutrition.totalNutrients.VITD.quantity).toFixed(1));
 
         //Putting all the elements together for the recipe cards
         cardContents.append(cardList1);
@@ -273,7 +275,7 @@ function grabFullRecipe() {
         collapseContents.append(collapseList7);
         collapseContents.append(collapseList8);
         collapseContents.append(collapseList9);
-        collapseContents.append(collapseList10);
+        // collapseContents.append(collapseList10);
 
         recipeDiv.append(accordion);
 

@@ -200,6 +200,7 @@ function grabFullRecipe() {
         var collapseContents = $("<ul>");
         collapseContents.addClass("list-group list-group-flush");
 
+        //appending nutrition information from the Edamam API
         var collapseList1 = $("<li>");
         collapseList1.addClass("list-group-item");
         collapseList1.text("Fat (g): " + (nutrition.totalNutrients.FAT.quantity).toFixed(1));
@@ -261,6 +262,7 @@ function grabFullRecipe() {
         collapseBody.append(collapseCard);
         collapseCard.append(collapseContents);
 
+        //Adding the list contents for the accordion
         collapseContents.append(collapseList1);
         collapseContents.append(collapseList2);
         collapseContents.append(collapseList3);

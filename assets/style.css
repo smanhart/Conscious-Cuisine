@@ -1,20 +1,77 @@
-
-
-
 .main {
   background-color: #be9b7b; }
   .main-sidebar {
     border: 1px solid; }
-
-.search {
-  margin-left: 20px; }
-
-.card-header {
+ 
+ #recipeSearch {
+  margin-left: 10px; }
+ 
+ .card-header {
   background-color: #580000; }
   .card-header .btn {
     color: white; }
+  
+  #recipeCard { 
+    width: 75px;
 
-.card-body {
+  }
+
+  .card {
+    margin: 15px;
+  }
+
+  .card-title {
+    padding-left: 20px;
+  }
+
+  .card-img-top {
+    width: 100%;
+  }
+ 
+ .card-body {
   color: brown; }
 
-/*# sourceMappingURL=style.css.map */
+  #nutriID {
+    margin: auto;
+  }
+
+ #searchButton {
+  background-color: #be9b7b; }
+ 
+ #searchButton:active {
+  background-color: #580000;
+  transform: translateY(4px);
+  text-emphasis-color: #580000; }
+ 
+ #searchButton:hover {
+  opacity: 1.0;
+  background-color: #580000;
+  box-shadow: none; }
+ 
+ .btn {
+  background-color: #be9b7b; }
+  .btn .btn:hover {
+    background-color: blue; }
+ 
+ .btn:active {
+  color: red;
+  transform: translateY(4px); }
+
+ .container-fluid {
+  flex-wrap: wrap; }
+ 
+ .yummly {
+  color: grey;
+  text-transform: uppercase;
+  padding-top: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center; }
+ 
+ .edamam {
+  text-align: center; }
+ 
+ footer {
+  border-top: 8px solid #580000; }
+ 
+ /*# sourceMappingURL=style.css.map* /

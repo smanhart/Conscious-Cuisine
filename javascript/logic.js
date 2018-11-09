@@ -196,7 +196,49 @@ function grabFullRecipe() {
 
         var collapseCard = $("<div>");
         collapseCard.addClass("card-body");
-        collapseCard.text("Fat (g): " + nutrition.totalNutrients.FAT.quantity);
+
+        var collapseContents = $("<ul>");
+        collapseContents.addClass("list-group list-group-flush");
+
+        var collapseList1 = $("<li>");
+        collapseList1.addClass("list-group-item");
+        collapseList1.text("Fat (g): " + (nutrition.totalNutrients.FAT.quantity).toFixed(1));
+
+        var collapseList2 = $("<li>");
+        collapseList2.addClass("list-group-item");
+        collapseList2.text("Saturated Fat (g): " + (nutrition.totalNutrients.FASAT.quantity).toFixed(1));
+
+        var collapseList3 = $("<li>");
+        collapseList3.addClass("list-group-item");
+        collapseList3.text("Sodium (mg): " + (nutrition.totalNutrients.NA.quantity).toFixed(1));
+
+        var collapseList4 = $("<li>");
+        collapseList4.addClass("list-group-item");
+        collapseList4.text("Carbohydrates (g): " + (nutrition.totalNutrients.CHOCDF.quantity).toFixed(1));
+
+        var collapseList5 = $("<li>");
+        collapseList5.addClass("list-group-item");
+        collapseList5.text("Sugar (g): " + (nutrition.totalNutrients.SUGAR.quantity).toFixed(1));
+        
+        var collapseList6 = $("<li>");
+        collapseList6.addClass("list-group-item");
+        collapseList6.text("Protein (g): " + (nutrition.totalNutrients.PROCNT.quantity).toFixed(1));
+        
+        var collapseList7 = $("<li>");
+        collapseList7.addClass("list-group-item");
+        collapseList7.text("Fiber (g): " + (nutrition.totalNutrients.FIBTG.quantity).toFixed(1));
+
+        var collapseList8 = $("<li>");
+        collapseList8.addClass("list-group-item");
+        collapseList8.text("Iron (mg): " + (nutrition.totalNutrients.FE.quantity).toFixed(1));
+        
+        var collapseList9 = $("<li>");
+        collapseList9.addClass("list-group-item");
+        collapseList9.text("Vitamin C (mg): " + (nutrition.totalNutrients.VITC.quantity).toFixed(1));
+
+        var collapseList10 = $("<li>");
+        collapseList10.addClass("list-group-item");
+        collapseList10.text("Vitamin D (mg): " + (nutrition.totalNutrients.VITD.quantity).toFixed(1));
 
         //Putting all the elements together for the recipe cards
         cardContents.append(cardList1);
@@ -217,6 +259,18 @@ function grabFullRecipe() {
 
         collapseBtn.append(collapseBody);
         collapseBody.append(collapseCard);
+        collapseCard.append(collapseContents);
+
+        collapseContents.append(collapseList1);
+        collapseContents.append(collapseList2);
+        collapseContents.append(collapseList3);
+        collapseContents.append(collapseList4);
+        collapseContents.append(collapseList5);
+        collapseContents.append(collapseList6);
+        collapseContents.append(collapseList7);
+        collapseContents.append(collapseList8);
+        collapseContents.append(collapseList9);
+        collapseContents.append(collapseList10);
 
         recipeDiv.append(accordion);
 

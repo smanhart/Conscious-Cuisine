@@ -179,7 +179,7 @@ function grabFullRecipe() {
 
             //appending the recipe cards to the page
             var recipeDiv = $("<div>");
-            recipeDiv.addClass("card");
+            recipeDiv.addClass("card cardRecipe");
             recipeDiv.attr({"style": "18rem"});
 
             var image = $("<img>");

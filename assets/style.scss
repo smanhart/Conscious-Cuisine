@@ -14,8 +14,25 @@
 .card-body {
     color: brown;
 }
+.testing{
+    display: flex;
+}
 
-.container-fluid{
-    flex-wrap:wrap;
-  }
+#recipeCard{
+  background-color : #ffff00;
+  
+  justify-content: flex-start; /* center if you want to the center */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cardRecipe{
+    width : 50px;
+  height : 50px;
+  background-color : #ff9999;
+  margin : 5px;
+  display: flex;
+  justify-content: center; /* center inside flex items */
+  align-items: center; /* center inside flex items */
+}
 

@@ -69,7 +69,7 @@ function recipeSearch(ingredient) {
     //takes the commas out of the array before adding to url
     queryParams = params.join("")
 
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=4&requirePictures=true"
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=3&requirePictures=true";
 
     // console.log(queryURL)
 
@@ -91,16 +91,12 @@ function recipeSearch(ingredient) {
 
 
 //pulls the search term value to feed to the url in the recipesearch function
+// //pulls the search term value to feed to the url in the recipesearch function
 $("#button").on("click", function (event) {
     event.preventDefault();
 
-    if ($("#recipeSearch").val() === "") {
-
-        //Adding user validation on search field 
-        $('#recipeSearch').after('<span class="error">This field is required</span>');
-
-    } else {
-
+   
+            $(".error").remove();
             $("#recipeCards").empty();
             ingredient = $("#recipeSearch").val().trim();
             //replaces white space with '+' signs to encode for URL
@@ -108,15 +104,23 @@ $("#button").on("click", function (event) {
             //gives the URL encoded search term argument to the recipesearch function
             recipeSearch(ingrNoSpace);
             $("#recipeSearch").val("");
-    }
+
+  
+    //Adding user validation on search field  
+    $(".error").remove();
+   
+      if (ingredient.length < 1 & params.length < 1) {
+
+        console.log("This field is required")
+        $('#recipeSearch').after('<span class="error">This field is required</span>');
+      }
 
 });
-
 
 //this function takes the returned recipe from the search function and pulls the data we need to get nutritional values
 function grabFullRecipe() {
 
-    var queryURL = "https://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
+    var queryURL = "https://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=597bebd2&_app_key=d4e057f3a8ea5950a36888326ba019ee"
 
     $.ajax({
         url: queryURL,
@@ -148,6 +152,7 @@ function grabFullRecipe() {
 
         var title = $("<h5>");
         title.addClass("card-title");
+        title.attr("id", "recipeTitle");
         title.text(response.name); //recipe title
 
         var cardContents = $("<ul>");

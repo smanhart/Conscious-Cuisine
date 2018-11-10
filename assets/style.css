@@ -11,16 +11,27 @@ nav {
     font-size: 4rem;
     padding-top: 15px; }
 
+#headingOne {
+  background-color: #580000;
+
+}
+
+#recipeTitle {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
 .card {
   background-color: oldlace; }
 
 #recipeSearch {
   margin-left: 10px; }
 
-.card-header {
-  background-color: #580000; }
-  .card-header .btn {
-    color: white; }
+
+
+.card-header .btn {
+  color: white; }
+
 
 .card-body {
   color: brown; }

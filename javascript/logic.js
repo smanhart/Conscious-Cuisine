@@ -69,7 +69,7 @@ function recipeSearch(ingredient) {
     //takes the commas out of the array before adding to url
     queryParams = params.join("")
 
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=4&requirePictures=true"
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=3&requirePictures=true";
 
     // console.log(queryURL)
 
@@ -116,7 +116,7 @@ $("#button").on("click", function (event) {
 //this function takes the returned recipe from the search function and pulls the data we need to get nutritional values
 function grabFullRecipe() {
 
-    var queryURL = "https://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164"
+    var queryURL = "https://api.yummly.com/v1/api/recipe/" + ingrId + "?_app_id=597bebd2&_app_key=d4e057f3a8ea5950a36888326ba019ee"
 
     $.ajax({
         url: queryURL,
@@ -148,6 +148,7 @@ function grabFullRecipe() {
 
         var title = $("<h5>");
         title.addClass("card-title");
+        title.attr("id", "recipeTitle");
         title.text(response.name); //recipe title
 
         var cardContents = $("<ul>");

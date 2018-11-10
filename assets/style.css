@@ -17,6 +17,20 @@ nav {
 #recipeSearch {
   margin-left: 10px; }
 
+ #recipeCard { 	
+    width: 75px; }
+
+ .card {	
+    margin: 15px;	
+  }	
+ .card-title {	
+    padding-left: 20px;	
+  }	
+ 
+ .card-img-top {	
+    width: 100%;	
+  }
+
 .card-header {
   background-color: #580000; }
   .card-header .btn {
@@ -24,6 +38,9 @@ nav {
 
 .card-body {
   color: brown; }
+
+#nutriID {
+  margin: auto; }
 
 #button {
   background-color: #580000;
@@ -55,6 +72,7 @@ nav {
 .yummly {
   color: grey;
   text-transform: uppercase;
+  padding-top: 5px;
   font-size: 10px;
   font-weight: bold;
   text-align: center; }
@@ -63,6 +81,7 @@ nav {
   text-align: center; }
 
 footer {
+  border-top: 8px solid #580000;
   background-color: oldlace; }
 
 /*# sourceMappingURL=style.css.map */

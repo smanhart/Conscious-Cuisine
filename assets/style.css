@@ -1,77 +1,87 @@
 .main {
-  background-color: #be9b7b; }
+  background-color: #be9b7b;
+  font-family: 'Montserrat', sans-serif; }
   .main-sidebar {
     border: 1px solid; }
- 
- #recipeSearch {
+
+nav {
+  background-color: oldlace; }
+  nav h1 {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 4rem;
+    padding-top: 15px; }
+
+.card {
+  background-color: oldlace; }
+
+#recipeSearch {
   margin-left: 10px; }
+
+ #recipeCard { 	
+    width: 75px; }
+
+ .card {	
+    margin: 15px;	
+  }	
+ .card-title {	
+    padding-left: 20px;	
+  }	
  
- .card-header {
+ .card-img-top {	
+    width: 100%;	
+  }
+
+.card-header {
   background-color: #580000; }
   .card-header .btn {
     color: white; }
-  
-  #recipeCard { 
-    width: 75px;
 
-  }
-
-  .card {
-    margin: 15px;
-  }
-
-  .card-title {
-    padding-left: 20px;
-  }
-
-  .card-img-top {
-    width: 100%;
-  }
- 
- .card-body {
+.card-body {
   color: brown; }
 
-  #nutriID {
-    margin: auto;
-  }
+#nutriID {
+  margin: auto; }
 
- #searchButton {
-  background-color: #be9b7b; }
- 
- #searchButton:active {
+#button {
+  background-color: #580000;
+  color: oldlace; }
+
+#button:active {
   background-color: #580000;
   transform: translateY(4px);
   text-emphasis-color: #580000; }
- 
- #searchButton:hover {
+
+#button:hover {
   opacity: 1.0;
-  background-color: #580000;
+  background-color: #641010;
   box-shadow: none; }
- 
- .btn {
-  background-color: #be9b7b; }
+
+.btn {
+  background-color: #be9b7b;
+  color: oldlace; }
   .btn .btn:hover {
     background-color: blue; }
- 
- .btn:active {
+
+.btn:active {
   color: red;
   transform: translateY(4px); }
 
- .container-fluid {
+.container-fluid {
   flex-wrap: wrap; }
- 
- .yummly {
+
+.yummly {
   color: grey;
   text-transform: uppercase;
   padding-top: 5px;
   font-size: 10px;
   font-weight: bold;
   text-align: center; }
- 
- .edamam {
+
+.edamam {
   text-align: center; }
- 
- footer {
-  border-top: 8px solid #580000; }
- 
- /*# sourceMappingURL=style.css.map* /
+
+footer {
+  border-top: 8px solid #580000;
+  background-color: oldlace; }
+
+/*# sourceMappingURL=style.css.map */

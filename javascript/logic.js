@@ -69,7 +69,7 @@ function recipeSearch(ingredient) {
     //takes the commas out of the array before adding to url
     queryParams = params.join("")
 
-    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=3&requirePictures=true"
+    queryURL = "https://api.yummly.com/v1/api/recipes?_app_id=1bdad67c&_app_key=d635ffbe690df5a2a7005bdce55a1164&q=" + ingredient + queryParams + "&maxResult=4&requirePictures=true"
 
     // console.log(queryURL)
 
@@ -78,12 +78,13 @@ function recipeSearch(ingredient) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response)
+        console.log("length of response matches" + response.matches.length)
 
         for (var i = 0; i < response.matches.length; i++) {
-
+            console.log("current for loop index" + i)
             ingrId = response.matches[i].id;
             grabFullRecipe()
+
         }
     })
 }
@@ -239,9 +240,9 @@ function grabFullRecipe() {
         collapseList9.addClass("list-group-item");
         collapseList9.text("Vitamin C (mg): " + (nutrition.totalNutrients.VITC.quantity).toFixed(1));
 
-        var collapseList10 = $("<li>");
-        collapseList10.addClass("list-group-item");
-        collapseList10.text("Vitamin D (mg): " + (nutrition.totalNutrients.VITD.quantity).toFixed(1));
+        // var collapseList10 = $("<li>");
+        // collapseList10.addClass("list-group-item");
+        // collapseList10.text("Vitamin D (mg): " + (nutrition.totalNutrients.VITD.quantity).toFixed(1));
 
         //Putting all the elements together for the recipe cards
         cardContents.append(cardList1);
@@ -274,7 +275,7 @@ function grabFullRecipe() {
         collapseContents.append(collapseList7);
         collapseContents.append(collapseList8);
         collapseContents.append(collapseList9);
-        collapseContents.append(collapseList10);
+        // collapseContents.append(collapseList10);
 
         recipeDiv.append(accordion);
 

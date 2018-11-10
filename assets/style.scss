@@ -1,7 +1,23 @@
 .main {
     background-color:#be9b7b ;
     &-sidebar { border: 1px solid; }
+    font-family: 'Montserrat', sans-serif;
   }
+
+nav {
+    background-color: oldlace;
+
+    h1 {
+        font-family: 'Homemade Apple', cursive;
+        font-size: 4rem;
+        padding-top: 15px;
+    }
+}
+
+.card {
+    background-color: oldlace;
+}
+
   #recipeSearch {
       margin-left: 10px;
   }
@@ -16,19 +32,20 @@
  }
  
  
- #searchButton  {
-    background-color: #be9b7b;
+ #button  {
+    background-color: #580000;
+    color: oldlace;
  }
- #searchButton:active {
+ #button:active {
     background-color: #580000;
     transform: translateY(4px);
     text-emphasis-color: #580000;
  }
  
- #searchButton:hover {
+ #button:hover {
  
     opacity:1.0;
-    background-color: #580000;
+    background-color: #641010;
  
     box-shadow:none;
  
@@ -37,6 +54,7 @@
  // Course and Allergies Buttons
  .btn  {
     background-color: #be9b7b;
+    color: oldlace;
  
         .btn:hover {background-color: blue}
  }
@@ -60,5 +78,5 @@
       text-align:center;
   }
  footer {
-    background-color: #580000;
+    background-color:oldlace;
  }

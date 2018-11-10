@@ -26,7 +26,7 @@ console.log(title);
 
   $.ajax({
     method: "POST",
-    url: "https://api.edamam.com/api/nutrition-details?app_id=ce13381c&app_key=4967284ccc86e52d874362eb512b2e94",
+    url: "https://api.edamam.com/api/nutrition-details?app_id=8ee75310&app_key=b3710b6c8646c15dfaf44d011d254d87",
     dataType: 'json',
     contentType: 'application/json',
     data: JSON.stringify(recipe)
